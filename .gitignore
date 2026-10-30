@@ -1,4 +1,13 @@
+
+# Configurações e credenciais
 /config.php
-/config.local.php
+.env
+.env.*
+
+# Arquivos temporários
+*.log
 .DS_Store
 Thumbs.db
+
+# Exportações de banco de dados
+*.sql
