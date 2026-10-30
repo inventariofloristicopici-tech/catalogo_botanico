@@ -1,0 +1,804 @@
+
+/* =====================================
+   CATÁLOGO BOTÂNICO - UFC
+===================================== */
+
+.pagina-catalogo {
+    --cat-verde: #244635;
+    --cat-verde-2: #315b47;
+    --cat-salvia: #a9bda5;
+    --cat-fundo: #f5f7f2;
+    --cat-texto: #293b30;
+    --cat-suave: #7d897e;
+    --cat-borda: #e5ebe2;
+
+    margin: 0;
+    min-height: 100vh;
+    background: var(--cat-fundo) !important;
+    color: var(--cat-texto);
+    font-family: Arial, sans-serif;
+}
+
+.pagina-catalogo *,
+.pagina-catalogo *::before,
+.pagina-catalogo *::after {
+    box-sizing: border-box;
+}
+
+/* CABEÇALHO */
+
+.catalogo-topo {
+    min-height: 82px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: #fff;
+    border-bottom: 1px solid var(--cat-borda);
+}
+
+.catalogo-marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--cat-verde);
+    text-decoration: none;
+}
+
+.marca-simbolo {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: #edf3e9;
+    font-size: 29px;
+}
+
+.catalogo-marca strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 19px;
+}
+
+.catalogo-marca small {
+    display: block;
+    margin-top: 5px;
+    color: #899889;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.catalogo-login {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 17px;
+    border: 1px solid #dce6d9;
+    border-radius: 8px;
+    color: var(--cat-verde);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.catalogo-login:hover {
+    background: #edf3e9;
+}
+
+/* CONTEÚDO PRINCIPAL */
+
+.catalogo-principal {
+    width: min(1160px, 88%);
+    margin: 0 auto;
+}
+
+/* DESTAQUE */
+
+.catalogo-hero {
+    position: relative;
+    min-height: 350px;
+    margin-top: 42px;
+    padding: 58px 7%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 19px;
+    background: linear-gradient(115deg, #244635, #315b47);
+    color: white;
+}
+
+.hero-conteudo {
+    position: relative;
+    z-index: 2;
+    max-width: 570px;
+}
+
+.hero-etiqueta {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #c1d5be;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.ponto-verde {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #b5d19e;
+}
+
+.hero-conteudo h1 {
+    margin: 23px 0 14px;
+    font-family: Georgia, serif;
+    font-size: clamp(37px, 5vw, 57px);
+    font-weight: 500;
+    line-height: 1.12;
+}
+
+.hero-conteudo h1 em {
+    color: #c3d6ae;
+    font-weight: 400;
+}
+
+.hero-conteudo > p {
+    max-width: 470px;
+    margin: 0;
+    color: #d3dfd2;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.hero-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #a9c0a5;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.hero-link span {
+    font-size: 17px;
+}
+
+.hero-decoracao {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    width: 280px;
+    height: 280px;
+    display: grid;
+    place-items: center;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.decoracao-circulo {
+    position: absolute;
+    width: 245px;
+    height: 245px;
+    border: 1px solid rgba(220, 238, 213, .25);
+    border-radius: 50%;
+}
+
+.decoracao-circulo::before,
+.decoracao-circulo::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(220, 238, 213, .17);
+    border-radius: 50%;
+}
+
+.decoracao-circulo::before {
+    inset: 17px;
+}
+
+.decoracao-circulo::after {
+    inset: 37px;
+}
+
+.decoracao-folha {
+    position: relative;
+    z-index: 1;
+    color: #c1d6b8;
+    font-size: 155px;
+    transform: rotate(-30deg);
+}
+
+.hero-decoracao small {
+    position: absolute;
+    bottom: -10px;
+    color: #b9cdb8;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+/* COLEÇÃO */
+
+.colecao {
+    padding: 65px 0 35px;
+    scroll-margin-top: 25px;
+}
+
+.colecao-cabecalho {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.secao-etiqueta {
+    color: #81977f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.colecao-cabecalho h2 {
+    margin: 9px 0 7px;
+    color: var(--cat-verde);
+    font-family: Georgia, serif;
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 500;
+}
+
+.colecao-cabecalho p {
+    margin: 0;
+    color: var(--cat-suave);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.total-plantas {
+    padding: 10px 15px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: #eaf1e6;
+    color: var(--cat-verde);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* PESQUISA */
+
+.catalogo-busca {
+    min-height: 64px;
+    margin-bottom: 28px;
+    padding: 8px 9px 8px 18px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    background: white;
+    border: 1px solid var(--cat-borda);
+    border-radius: 11px;
+    box-shadow: 0 5px 18px rgba(38, 65, 44, .035);
+}
+
+.busca-icone {
+    color: #829783;
+    font-size: 27px;
+}
+
+.catalogo-busca input {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: var(--cat-texto);
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.catalogo-busca input::placeholder {
+    color: #a0aaa0;
+}
+
+.catalogo-busca button {
+    min-width: 95px;
+    min-height: 43px;
+    padding: 10px 17px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--cat-verde-2);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.catalogo-busca button:hover {
+    background: var(--cat-verde);
+}
+
+.limpar-busca {
+    color: #718674;
+    font-size: 11px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.catalogo-resultado {
+    margin: -10px 0 22px;
+    color: var(--cat-suave);
+    font-size: 12px;
+}
+
+.catalogo-resultado strong {
+    color: var(--cat-verde);
+}
+
+/* CARDS DAS PLANTAS */
+
+.catalogo-grade {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 23px;
+}
+
+.planta-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid var(--cat-borda);
+    border-radius: 13px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.planta-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(37, 66, 44, .10);
+}
+
+.planta-foto {
+    position: relative;
+    height: 205px;
+    overflow: hidden;
+    background: #eaf0e6;
+}
+
+.planta-foto img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .4s;
+}
+
+.planta-card:hover .planta-foto img {
+    transform: scale(1.04);
+}
+
+.planta-sem-foto {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(145deg, #e8f0e3, #dce8d7);
+    color: #668269;
+}
+
+.planta-sem-foto span {
+    font-size: 70px;
+}
+
+.planta-sem-foto small {
+    font-size: 10px;
+    letter-spacing: .5px;
+}
+
+.foto-selo {
+    position: absolute;
+    left: 13px;
+    top: 13px;
+    padding: 7px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .91);
+    color: var(--cat-verde);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: .8px;
+}
+
+.planta-informacoes {
+    min-height: 180px;
+    padding: 19px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.planta-familia {
+    max-width: 100%;
+    padding: 6px 9px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #edf3e9;
+    color: #648067;
+    font-size: 9px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.planta-informacoes h3 {
+    width: 100%;
+    margin: 13px 0 5px;
+    color: var(--cat-verde);
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+.planta-nome-cientifico {
+    margin: 0;
+    color: #849084;
+    font-size: 11px;
+    font-style: italic;
+    overflow-wrap: anywhere;
+}
+
+.planta-ver-ficha {
+    width: 100%;
+    margin-top: auto;
+    padding-top: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--cat-verde-2);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.planta-ver-ficha span {
+    font-size: 17px;
+}
+
+/* RESULTADO VAZIO */
+
+.catalogo-vazio {
+    padding: 55px 20px;
+    text-align: center;
+    background: white;
+    border: 1px solid var(--cat-borda);
+    border-radius: 14px;
+}
+
+.catalogo-vazio > span {
+    color: #8ba187;
+    font-size: 45px;
+}
+
+.catalogo-vazio h3 {
+    margin: 12px 0 8px;
+    color: var(--cat-verde);
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.catalogo-vazio p {
+    color: var(--cat-suave);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.catalogo-vazio a {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--cat-verde-2);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* NOTA E RODAPÉ */
+
+.catalogo-nota {
+    margin: 45px 0;
+    padding: 20px 23px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #e0e9dc;
+    border-radius: 11px;
+    background: #edf3e9;
+}
+
+.catalogo-nota > span {
+    color: #779276;
+    font-size: 25px;
+}
+
+.catalogo-nota p {
+    margin: 0;
+    color: #718071;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.catalogo-nota strong {
+    color: var(--cat-verde);
+}
+
+.catalogo-rodape {
+    min-height: 75px;
+    padding: 20px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: white;
+    border-top: 1px solid var(--cat-borda);
+    color: #899589;
+    font-size: 10px;
+}
+
+.catalogo-rodape a {
+    color: var(--cat-verde);
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* TABLETS */
+
+@media (max-width: 950px) {
+    .catalogo-principal {
+        width: 91%;
+    }
+
+    .catalogo-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    .hero-decoracao {
+        right: 2%;
+        opacity: .65;
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 650px) {
+    .catalogo-topo {
+        min-height: 70px;
+        padding: 0 5%;
+    }
+
+    .catalogo-marca strong {
+        font-size: 16px;
+    }
+
+    .catalogo-marca small {
+        font-size: 8px;
+    }
+
+    .marca-simbolo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .catalogo-login {
+        gap: 5px;
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .catalogo-principal {
+        width: 90%;
+    }
+
+    .catalogo-hero {
+        min-height: 340px;
+        margin-top: 22px;
+        padding: 37px 25px;
+        border-radius: 14px;
+    }
+
+    .hero-conteudo {
+        max-width: 100%;
+    }
+
+    .hero-etiqueta {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .hero-conteudo h1 {
+        max-width: 350px;
+        margin-top: 20px;
+        font-size: clamp(36px, 9vw, 47px);
+    }
+
+    .hero-conteudo > p {
+        max-width: 340px;
+        font-size: 12px;
+    }
+
+    .hero-decoracao {
+        right: -100px;
+        opacity: .16;
+    }
+
+    .colecao {
+        padding-top: 43px;
+    }
+
+    .colecao-cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .colecao-cabecalho h2 {
+        font-size: 27px;
+    }
+
+    .colecao-cabecalho p {
+        font-size: 12px;
+    }
+
+    .catalogo-busca {
+        min-height: 58px;
+        padding: 7px 8px 7px 12px;
+        gap: 8px;
+    }
+
+    .catalogo-busca input {
+        font-size: 11px;
+    }
+
+    .catalogo-busca button {
+        min-width: 70px;
+        min-height: 40px;
+        padding: 9px;
+        font-size: 10px;
+    }
+
+    .busca-icone {
+        font-size: 22px;
+    }
+
+    .catalogo-grade {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .planta-foto {
+        height: 145px;
+    }
+
+    .planta-informacoes {
+        min-height: 165px;
+        padding: 12px;
+    }
+
+    .planta-familia {
+        font-size: 8px;
+    }
+
+    .planta-informacoes h3 {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .planta-nome-cientifico {
+        font-size: 10px;
+    }
+
+    .planta-ver-ficha {
+        padding-top: 13px;
+        font-size: 10px;
+    }
+
+    .foto-selo {
+        left: 8px;
+        top: 8px;
+        padding: 6px 7px;
+        font-size: 7px;
+    }
+
+    .catalogo-nota {
+        margin: 30px 0;
+        padding: 15px;
+    }
+
+    .catalogo-nota p {
+        font-size: 10px;
+    }
+
+    .catalogo-rodape {
+        padding: 20px 5%;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 380px) {
+    .catalogo-login {
+        font-size: 9px;
+    }
+
+    .catalogo-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .planta-foto {
+        height: 205px;
+    }
+
+    .planta-informacoes {
+        min-height: 170px;
+        padding: 17px;
+    }
+
+    .planta-informacoes h3 {
+        font-size: 22px;
+    }
+
+    .hero-conteudo h1 {
+        font-size: 35px;
+    }
+}
+/* Abelha decorativa do destaque */
+.hero-decoracao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.abelha-decorativa {
+    font-size: 145px;
+    line-height: 1;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .15));
+}
+
+.hero-decoracao small {
+    position: static;
+    text-align: center;
+}
+
+@media (max-width: 650px) {
+    .hero-decoracao {
+        right: -100px;
+    }
+
+    .abelha-decorativa {
+        font-size: 115px;
+    }
+}
+/* Abelha no símbolo da marca */
+.marca-simbolo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    line-height: 1;
+}

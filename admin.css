@@ -1,0 +1,890 @@
+
+/* ======================================
+   DASHBOARD - INVENTÁRIO BOTÂNICO
+====================================== */
+
+:root {
+    --admin-verde: #244635;
+    --admin-verde-2: #315b47;
+    --admin-salvia: #a9bda5;
+    --admin-claro: #e6efdf;
+    --admin-fundo: #f3f6ef;
+    --admin-branco: #ffffff;
+    --admin-texto: #26392d;
+    --admin-suave: #7b897d;
+    --admin-borda: #e6ebe3;
+}
+
+.pagina-admin {
+    margin: 0;
+    background: var(--admin-fundo) !important;
+    color: var(--admin-texto);
+    overflow-x: hidden;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* MENU LATERAL */
+
+.sidebar {
+    width: 255px;
+    min-width: 255px;
+    min-height: 100vh;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    background: var(--admin-verde);
+    color: white;
+}
+
+.sidebar-marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-logo {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(255,255,255,.13);
+    font-size: 23px;
+}
+
+.sidebar-marca strong {
+    display: block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 19px;
+}
+
+.sidebar-marca small {
+    display: block;
+    margin-top: 3px;
+    color: #bdcfbd;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.sidebar-separador {
+    height: 1px;
+    margin: 30px 0;
+    background: rgba(255,255,255,.14);
+}
+
+.sidebar-legenda {
+    margin: 0 0 14px 10px;
+    color: #a9c0aa;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.sidebar-menu {
+    display: grid;
+    gap: 8px;
+}
+
+.menu-link {
+    min-height: 48px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 9px;
+    color: #d8e5d7;
+    font-size: 13px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.menu-link span {
+    width: 22px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.menu-link:hover,
+.menu-link.ativo {
+    color: white;
+    background: rgba(255,255,255,.13);
+}
+
+.sidebar-final {
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+.sidebar-perfil {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.perfil-icone {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--admin-verde);
+    background: #dce9d6;
+    font-size: 20px;
+}
+
+.sidebar-perfil strong,
+.sidebar-perfil small {
+    display: block;
+    max-width: 145px;
+    overflow-wrap: anywhere;
+}
+
+.sidebar-perfil strong {
+    font-size: 12px;
+}
+
+.sidebar-perfil small {
+    margin-top: 3px;
+    color: #b9cbb9;
+    font-size: 10px;
+}
+
+.menu-sair {
+    display: block;
+    padding: 12px;
+    color: #e0c6bd;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.menu-sair:hover {
+    background: rgba(255,255,255,.09);
+}
+
+/* CONTEÚDO */
+
+.dashboard-conteudo {
+    min-width: 0;
+    flex: 1;
+}
+
+.dashboard-topo {
+    min-height: 76px;
+    padding: 15px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    background: white;
+    border-bottom: 1px solid var(--admin-borda);
+}
+
+.topo-indicador {
+    color: var(--admin-verde-2);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.dashboard-topo p {
+    margin: 3px 0 0;
+    color: var(--admin-suave);
+    font-size: 12px;
+}
+
+.topo-catalogo {
+    padding: 10px 15px;
+    color: var(--admin-verde);
+    background: #f0f5ed;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.dashboard-corpo {
+    width: min(1250px, 92%);
+    margin: 0 auto;
+}
+
+/* APRESENTAÇÃO */
+
+.dashboard-intro {
+    padding: 42px 0 28px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.dashboard-tag {
+    color: #789278;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.dashboard-intro h1 {
+    margin: 8px 0;
+    color: var(--admin-verde);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(30px, 3vw, 40px);
+    line-height: 1.15;
+}
+
+.dashboard-intro p {
+    max-width: 550px;
+    margin: 0;
+    color: var(--admin-suave);
+    font-size: 13px;
+}
+
+.admin-nova-planta {
+    min-height: 45px;
+    padding: 12px 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border: 0;
+    border-radius: 9px;
+    color: white;
+    background: var(--admin-verde-2);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.admin-nova-planta:hover {
+    background: var(--admin-verde);
+    transform: translateY(-2px);
+}
+
+/* ESTATÍSTICAS */
+
+.dashboard-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 35px;
+}
+
+.estatistica-card {
+    min-width: 0;
+    min-height: 145px;
+    padding: 21px;
+    background: white;
+    border: 1px solid var(--admin-borda);
+    border-radius: 14px;
+}
+
+.estatistica-card.destaque {
+    background: linear-gradient(130deg, #315b47, #244635);
+    color: white;
+    border: 0;
+}
+
+.estatistica-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--admin-suave);
+    font-size: 11px;
+}
+
+.destaque .estatistica-topo {
+    color: #d1e1d0;
+}
+
+.estatistica-icone {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    background: #eff4eb;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+.destaque .estatistica-icone {
+    background: rgba(255,255,255,.13);
+}
+
+.estatistica-card > strong {
+    display: block;
+    margin-top: 13px;
+    color: var(--admin-verde);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 31px;
+}
+
+.estatistica-card.destaque > strong {
+    color: white;
+}
+
+.estatistica-card > small {
+    display: block;
+    margin-top: 4px;
+    color: var(--admin-suave);
+    font-size: 10px;
+}
+
+.estatistica-card.destaque > small {
+    color: #d1e1d0;
+}
+
+.estatistica-card > .estatistica-status {
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 25px;
+}
+
+/* GERENCIAMENTO */
+
+.gerenciamento {
+    padding: 25px;
+    background: white;
+    border: 1px solid var(--admin-borda);
+    border-radius: 16px;
+}
+
+.gerenciamento-cabecalho {
+    margin-bottom: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.gerenciamento-cabecalho h2 {
+    margin: 7px 0 4px;
+    color: var(--admin-verde);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 25px;
+}
+
+.gerenciamento-cabecalho p {
+    margin: 0;
+    color: var(--admin-suave);
+    font-size: 11px;
+}
+
+.contador-registros {
+    padding: 8px 12px;
+    color: var(--admin-verde);
+    background: #edf3e9;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* TABELA */
+
+.admin-tabela {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--admin-borda);
+    border-radius: 11px;
+}
+
+.admin-tabela table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.admin-tabela th {
+    padding: 15px;
+    color: #657967;
+    background: #f3f6f0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.admin-tabela td {
+    padding: 17px 15px;
+    color: #566458;
+    border-top: 1px solid #edf0eb;
+    vertical-align: middle;
+}
+
+.admin-tabela tbody tr:hover {
+    background: #fafcf8;
+}
+
+.nome-planta {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--admin-verde);
+}
+
+.mini-folha {
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    background: #edf4e9;
+    border-radius: 9px;
+}
+
+.admin-tabela em {
+    color: #718075;
+}
+
+.acoes-linha {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    white-space: nowrap;
+}
+
+.acoes-linha form {
+    margin: 0;
+}
+
+.acao-visualizar,
+.acao-editar,
+.acao-excluir {
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 7px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.acao-visualizar {
+    color: #55735b;
+    background: #edf4e9;
+}
+
+.acao-editar {
+    color: #fff;
+    background: var(--admin-verde-2);
+}
+
+.acao-excluir {
+    color: #a04c43;
+    background: #f9eeeb;
+}
+
+/* CARTÕES MOBILE */
+
+.admin-cartoes {
+    display: none;
+}
+
+.admin-cartao {
+    min-width: 0;
+    padding: 19px;
+    background: #f8faf6;
+    border: 1px solid var(--admin-borda);
+    border-radius: 13px;
+}
+
+.cartao-planta-topo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 14px;
+    color: #7a9079;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.cartao-folha {
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    background: #e5efdf;
+    border-radius: 9px;
+    font-size: 17px;
+}
+
+.admin-cartao h3 {
+    margin: 0 0 5px;
+    color: var(--admin-verde);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    overflow-wrap: anywhere;
+}
+
+.cartao-cientifico {
+    margin: 0 0 16px;
+    color: #7b897d;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.cartao-familia {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: white;
+    border: 1px solid var(--admin-borda);
+    border-radius: 9px;
+}
+
+.cartao-familia small {
+    color: #89978a;
+    font-size: 9px;
+    letter-spacing: .7px;
+}
+
+.cartao-familia strong {
+    color: var(--admin-verde);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.cartao-acoes {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.cartao-acoes form {
+    display: flex;
+    flex: 1 1 80px;
+    margin: 0;
+}
+
+.acao-mobile {
+    min-height: 42px;
+    padding: 10px;
+    display: flex;
+    flex: 1 1 80px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.visualizar {
+    color: #55735b;
+    background: #e9f0e5;
+}
+
+.editar {
+    color: white;
+    background: var(--admin-verde-2);
+}
+
+.excluir {
+    color: #a04c43;
+    background: #f8eae6;
+}
+
+/* ESTADO VAZIO */
+
+.admin-vazio {
+    padding: 45px 15px;
+    text-align: center;
+    background: #f8faf6;
+    border-radius: 12px;
+}
+
+.admin-vazio > span {
+    font-size: 40px;
+}
+
+.admin-vazio h3 {
+    color: var(--admin-verde);
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.admin-vazio p {
+    margin-bottom: 20px;
+    color: var(--admin-suave);
+    font-size: 12px;
+}
+
+/* RODAPÉ */
+
+.dashboard-rodape {
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #89968a;
+    font-size: 10px;
+}
+
+/* ======================================
+   TABLETS
+====================================== */
+
+@media (max-width: 1000px) {
+    .sidebar {
+        width: 215px;
+        min-width: 215px;
+        padding: 25px 15px;
+    }
+
+    .dashboard-estatisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .estatistica-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .gerenciamento {
+        padding: 18px;
+    }
+
+    .admin-tabela th,
+    .admin-tabela td {
+        padding: 12px 10px;
+    }
+}
+
+/* ======================================
+   CELULARES
+====================================== */
+
+@media (max-width: 700px) {
+    .dashboard {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+        padding: 13px 5%;
+        display: block;
+    }
+
+    .sidebar-marca {
+        width: fit-content;
+    }
+
+    .sidebar-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .sidebar-marca strong {
+        font-size: 17px;
+    }
+
+    /* Mantém o perfil e o botão Sair visíveis */
+    .sidebar-separador,
+    .sidebar-legenda {
+        display: none;
+    }
+
+    .sidebar-final {
+        display: block;
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+
+    .sidebar-perfil {
+        padding: 10px 0;
+    }
+
+    .menu-sair {
+        display: block;
+        padding: 12px;
+        margin-top: 4px;
+        text-align: center;
+        background: rgba(255,255,255,.08);
+    }
+
+    .sidebar-menu {
+        margin-top: 13px;
+        display: flex;
+        gap: 7px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+    }
+
+    .menu-link {
+        min-height: 39px;
+        padding: 9px 11px;
+        flex: 0 0 auto;
+        gap: 6px;
+        font-size: 10px;
+    }
+
+    .menu-link span {
+        width: auto;
+        font-size: 15px;
+    }
+
+    .dashboard-topo {
+        min-height: 60px;
+        padding: 11px 5%;
+    }
+
+    .topo-indicador {
+        font-size: 9px;
+    }
+
+    .topo-catalogo {
+        padding: 9px;
+        font-size: 10px;
+    }
+
+    .dashboard-corpo {
+        width: 90%;
+    }
+
+    .dashboard-intro {
+        padding: 30px 0 21px;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .dashboard-intro h1 {
+        font-size: 31px;
+    }
+
+    .dashboard-intro p {
+        font-size: 12px;
+    }
+
+    .admin-nova-planta {
+        width: 100%;
+    }
+
+    .dashboard-estatisticas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 23px;
+    }
+
+    .estatistica-card {
+        min-height: 125px;
+        padding: 14px;
+    }
+
+    .estatistica-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .estatistica-topo {
+        font-size: 10px;
+    }
+
+    .estatistica-icone {
+        width: 29px;
+        height: 29px;
+        font-size: 14px;
+    }
+
+    .estatistica-card > strong {
+        font-size: 26px;
+    }
+
+    .estatistica-card > small {
+        font-size: 9px;
+    }
+
+    .gerenciamento {
+        padding: 16px;
+        border-radius: 13px;
+    }
+
+    .gerenciamento-cabecalho {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gerenciamento-cabecalho h2 {
+        font-size: 23px;
+    }
+
+    .admin-tabela {
+        display: none !important;
+    }
+
+    .admin-cartoes {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 13px;
+    }
+
+    .dashboard-rodape {
+        flex-direction: column;
+        gap: 5px;
+        padding: 20px 0;
+    }
+}
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 380px) {
+    .dashboard-intro h1 {
+        font-size: 27px;
+    }
+
+    .dashboard-estatisticas {
+        grid-template-columns: 1fr;
+    }
+
+    .estatistica-card:last-child {
+        grid-column: auto;
+    }
+
+    .cartao-acoes {
+        flex-direction: column;
+    }
+
+    .cartao-acoes a,
+    .cartao-acoes form,
+    .cartao-acoes button {
+        width: 100%;
+    }
+}
+
+/* CORREÇÃO DO BOTÃO EDITAR NA TABELA DO COMPUTADOR */
+
+.admin-tabela .acoes-linha a.acao-editar {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 75px;
+    min-height: 34px;
+    padding: 8px 12px;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-indent: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    text-decoration: none !important;
+}
